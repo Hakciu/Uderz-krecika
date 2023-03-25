@@ -24,6 +24,11 @@ body {
   margin-bottom: 0.5em;
 }
 
+.lives {
+  font-size: 4em;
+  margin-bottom: 0.5em;
+}
+
 .board {
   height: 600px;
   width: 600px;
@@ -34,8 +39,10 @@ body {
 }
 
 .hole {
-  background-color: rgb(100, 60, 31);
+  background-color: rgb(165, 85, 11);
   border-radius: 50%;
+  box-shadow: inset 0 10px 0 7px rgb(53, 21, 6),
+    inset 0 20px 20px 15px rgba(0, 0, 0, 0.3), 0 0 5px rgba(0, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
 }
@@ -64,7 +71,7 @@ body {
   position: absolute;
   top: 100px;
   left: 100px;
-  background-image: url("images/hhh.png");
+  background-image: url("images/hammer.png");
   background-size: 100% 100%;
   transform: translate(-20%, -20%);
   transition: transform 0.1s;
@@ -144,4 +151,44 @@ body {
 
 .options-screen {
   display: none;
+  font-size: 2em;
+}
+
+input {
+  transform: scale(2);
+}
+
+.btns {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.selectOption {
+  display: grid;
+  grid-template-columns: 0.5em auto;
+  gap: 0.5em;
+}
+
+.ls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: darkgray;
+  border-radius: 50%;
+}
+
+.result-screen {
+  display: none;
+}
+
+.lives-checked {
+  margin-top: 20px;
+  display: none;
+  align-items: center;
+  gap: 30px;
 }

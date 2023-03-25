@@ -23,16 +23,50 @@
 
     <div class="options-screen">
       <h1>Ustawienia</h1>
-      <div class="options-buttons">
-        <button class="easy">Łatwy</button>
-        <button class="medium">Średni</button>
-        <button class="hard">Trudny</button>
+      <div class="btns">
+        <div class="selectOption">
+          <input type="checkbox" id="speed" />
+          <label for="speed">Zwiększająca się szybkość</label>
+        </div>
+        <br />
+        <div class="selectOption">
+          <input type="checkbox" id="golden" />
+          <label for="golden">Zlote Kreciki</label>
+        </div>
+        <br />
+        <div class="selectOption">
+          <input type="checkbox" id="lives" />
+          <label for="lives">Życia</label>
+          <div class="lives-checked">
+            <div class="ls">
+              <input type="radio" id="lives-1" name="liv" value="1" />
+              <label for="lives-1">1</label>
+            </div>
+            <br />
+            <div class="ls">
+              <input type="radio" id="lives-3" name="liv" value="3" />
+              <label for="lives-3">3</label>
+            </div>
+            <br />
+            <div class="ls">
+              <input type="radio" id="lives-5" name="liv" value="5" />
+              <label for="lives-5">5</label>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- <button class="back-button">Powrót</button> -->
+      <button class="back-button">Powrót</button>
+    </div>
+
+    <div class="result-screen">
+      <h1>KONIEC GRY</h1>
+      <h1>Twój wynik to: <span>0</span></h1>
+      <button class="back-button">Powrót</button>
     </div>
 
     <div class="game">
       <h1 class="score">Punkty: <span>0</span></h1>
+      <h1 class="lives">Życia: <span>3</span></h1>
       <div class="board">
         <div class="hole"></div>
         <div class="hole"></div>
