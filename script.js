@@ -16,13 +16,20 @@ const lives3 = document.querySelector("#lives-3");
 const lives5 = document.querySelector("#lives-5");
 const ls = document.querySelectorAll(".ls");
 const showLives = document.querySelector(".game .lives");
+const przejscie = document.querySelector(".przejscie");
 
 const speed = document.querySelector("#speed");
 const live = document.querySelector("#lives");
 const golden = document.querySelector("#golden");
 
-let lives = 0;
+let lives = 9999;
 let maxHealth;
+
+if (lives >= 9999) {
+  live.checked = false;
+  livesChecked.style.display = "none";
+  showLives.style.display = "none";
+}
 
 let speedChecked = false;
 let liveChecked = false;
@@ -78,22 +85,40 @@ let random1 = 0;
 let random2 = 0;
 
 startButton.addEventListener("click", () => {
-  startScreen.style.display = "none";
-  resultScreen.style.display = "none";
-  game.style.display = "flex";
-  game.style.flexDirection = "column";
-  game.style.justifyContent = "center";
-  game.style.alignItems = "center";
+  przejscie.classList.add("up");
 
-  run();
+  przejscie.addEventListener("transitionend", () => {
+    przejscie.classList.remove("up");
+  });
+
+  setTimeout(() => {
+    startScreen.style.display = "none";
+    resultScreen.style.display = "none";
+    game.style.display = "flex";
+    game.style.flexDirection = "column";
+    game.style.justifyContent = "center";
+    game.style.alignItems = "center";
+  }, 500);
+
+  setTimeout(() => {
+    run();
+  }, 2000);
 });
 
 optionsButton.addEventListener("click", () => {
-  startScreen.style.display = "none";
-  optionsScreen.style.display = "flex";
-  optionsScreen.style.flexDirection = "column";
-  optionsScreen.style.justifyContent = "center";
-  optionsScreen.style.alignItems = "center";
+  przejscie.classList.add("up");
+
+  przejscie.addEventListener("transitionend", () => {
+    przejscie.classList.remove("up");
+  });
+
+  setTimeout(() => {
+    startScreen.style.display = "none";
+    optionsScreen.style.display = "flex";
+    optionsScreen.style.flexDirection = "column";
+    optionsScreen.style.justifyContent = "center";
+    optionsScreen.style.alignItems = "center";
+  }, 500);
 });
 
 let score = 0;
@@ -155,12 +180,20 @@ function run() {
     img3.addEventListener("click", () => {
       lives--;
       if (lives <= 0) {
-        game.style.display = "none";
-        resultScreen.style.display = "flex";
-        resultScreen.style.flexDirection = "column";
-        resultScreen.style.justifyContent = "center";
-        resultScreen.style.alignItems = "center";
-        resultResult.textContent = score;
+        przejscie.classList.add("up");
+
+        przejscie.addEventListener("transitionend", () => {
+          przejscie.classList.remove("up");
+        });
+
+        setTimeout(() => {
+          game.style.display = "none";
+          resultScreen.style.display = "flex";
+          resultScreen.style.flexDirection = "column";
+          resultScreen.style.justifyContent = "center";
+          resultScreen.style.alignItems = "center";
+          resultResult.textContent = score;
+        }, 500);
       }
       livesElement.textContent = lives;
       img3.src = "images/bomba2.png";
@@ -204,10 +237,8 @@ function run() {
   }, speed3);
 
   backButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      clearTimeout(timer);
-      clearTimeout(timer2);
-      clearTimeout(timer3);
+    btn.addeventlistener("click", () => {
+      document.querySelectorAll(".mole").forEach((mole) => mole.remove());
     });
   });
 }
@@ -227,13 +258,21 @@ window.addEventListener("mouseup", () => {
 
 backButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
-    game.style.display = "none";
-    optionsScreen.style.display = "none";
-    resultScreen.style.display = "none";
-    startScreen.style.display = "flex";
-    score = 0;
-    lives = maxHealth;
-    scoreElement.textContent = score;
-    livesElement.textContent = lives;
+    przejscie.classList.add("up");
+
+    przejscie.addEventListener("transitionend", () => {
+      przejscie.classList.remove("up");
+    });
+
+    setTimeout(() => {
+      game.style.display = "none";
+      optionsScreen.style.display = "none";
+      resultScreen.style.display = "none";
+      startScreen.style.display = "flex";
+      score = 0;
+      lives = maxHealth;
+      scoreElement.textContent = score;
+      livesElement.textContent = lives;
+    }, 500);
   });
 });
