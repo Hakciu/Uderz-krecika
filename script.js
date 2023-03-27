@@ -85,11 +85,19 @@ let random1 = 0;
 let random2 = 0;
 
 startButton.addEventListener("click", () => {
-  przejscie.classList.add("up");
+  startButton.classList.add("btnn");
 
-  przejscie.addEventListener("transitionend", () => {
-    przejscie.classList.remove("up");
+  startButton.addEventListener("transitionend", () => {
+    startButton.classList.remove("btnn");
   });
+
+  setTimeout(() => {
+    przejscie.classList.add("up");
+
+    przejscie.addEventListener("transitionend", () => {
+      przejscie.classList.remove("up");
+    });
+  }, 200);
 
   setTimeout(() => {
     startScreen.style.display = "none";
@@ -106,19 +114,27 @@ startButton.addEventListener("click", () => {
 });
 
 optionsButton.addEventListener("click", () => {
-  przejscie.classList.add("up");
+  optionsButton.classList.add("btnn");
 
-  przejscie.addEventListener("transitionend", () => {
-    przejscie.classList.remove("up");
+  optionsButton.addEventListener("transitionend", () => {
+    optionsButton.classList.remove("btnn");
   });
 
   setTimeout(() => {
-    startScreen.style.display = "none";
-    optionsScreen.style.display = "flex";
-    optionsScreen.style.flexDirection = "column";
-    optionsScreen.style.justifyContent = "center";
-    optionsScreen.style.alignItems = "center";
-  }, 500);
+    przejscie.classList.add("up");
+
+    przejscie.addEventListener("transitionend", () => {
+      przejscie.classList.remove("up");
+    });
+
+    setTimeout(() => {
+      startScreen.style.display = "none";
+      optionsScreen.style.display = "flex";
+      optionsScreen.style.flexDirection = "column";
+      optionsScreen.style.justifyContent = "center";
+      optionsScreen.style.alignItems = "center";
+    }, 500);
+  }, 200);
 });
 
 let score = 0;
@@ -128,6 +144,8 @@ let speed2 = 1000;
 let speed3 = 1500;
 
 const sound = new Audio("images/smash.mp3");
+const explosion = new Audio("images/explosion.mp3");
+const point = new Audio("images/point.mp3");
 
 function run() {
   random1 = Math.floor(Math.random() * 2);
@@ -175,7 +193,8 @@ function run() {
 
   if (random1 === 0) {
     img3.classList.add("mole");
-    img3.src = "images/bomba1.webp";
+    // img3.src = "images/bomba1.webp";
+    img3.src = "images/bomba3.png";
 
     img3.addEventListener("click", () => {
       lives--;
@@ -235,17 +254,11 @@ function run() {
     hole.removeChild(img);
     run();
   }, speed3);
-
-  backButtons.forEach((btn) => {
-    btn.addeventlistener("click", () => {
-      document.querySelectorAll(".mole").forEach((mole) => mole.remove());
-    });
-  });
 }
 
 window.addEventListener("mousemove", (e) => {
-  cursor.style.top = e.pageY + "px";
-  cursor.style.left = e.pageX + "px";
+  cursor.style.top = e.pageY - 15 + "px";
+  cursor.style.left = e.pageX + 15 + "px";
 });
 
 window.addEventListener("mousedown", () => {
@@ -258,21 +271,29 @@ window.addEventListener("mouseup", () => {
 
 backButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
-    przejscie.classList.add("up");
+    btn.classList.add("btnn");
 
-    przejscie.addEventListener("transitionend", () => {
-      przejscie.classList.remove("up");
+    btn.addEventListener("transitionend", () => {
+      btn.classList.remove("btnn");
     });
 
     setTimeout(() => {
-      game.style.display = "none";
-      optionsScreen.style.display = "none";
-      resultScreen.style.display = "none";
-      startScreen.style.display = "flex";
-      score = 0;
-      lives = maxHealth;
-      scoreElement.textContent = score;
-      livesElement.textContent = lives;
-    }, 500);
+      przejscie.classList.add("up");
+
+      przejscie.addEventListener("transitionend", () => {
+        przejscie.classList.remove("up");
+      });
+
+      setTimeout(() => {
+        game.style.display = "none";
+        optionsScreen.style.display = "none";
+        resultScreen.style.display = "none";
+        startScreen.style.display = "flex";
+        score = 0;
+        lives = maxHealth;
+        scoreElement.textContent = score;
+        livesElement.textContent = lives;
+      }, 500);
+    }, 200);
   });
 });
