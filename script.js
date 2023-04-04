@@ -20,6 +20,8 @@ const przejscie = document.querySelector(".przejscie");
 const speed = document.querySelector("#speed");
 const live = document.querySelector("#lives");
 const golden = document.querySelector("#golden");
+const logo = document.querySelector("#logo");
+const gif = document.querySelector("#gif");
 
 let lives = 9999;
 let maxHealth;
@@ -297,4 +299,15 @@ window.addEventListener("mousedown", () => {
 window.addEventListener("mouseup", () => {
   cursor.classList.remove("active");
 });
+//window onload
+window.addEventListener("load", () => {
+  logo.classList.add("pulse");
 
+  setTimeout(() => {
+    gif.classList.add("gif2");
+  }, 10000);
+
+  setTimeout(() => {
+    gif.classList.add("gif2");
+  }, 35000);
+});
