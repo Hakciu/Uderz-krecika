@@ -11,10 +11,19 @@ body {
   font-family: "Titan One", cursive;
   text-shadow: -2px -2px 0 #000, /* shadow color and offset */ 2px -2px 0 #000,
     -2px 2px 0 #000, 2px 2px 0 #000;
-    overflow: hidden !important;
+  overflow: hidden !important;
 }
 
-h1, h2, h3, h4, h5, p, a, li, label,  button {
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+li,
+label,
+button {
   user-select: none;
 }
 
@@ -22,7 +31,8 @@ h1 {
   padding: 10px;
 }
 
-body, .project {
+body,
+.project {
   font-family: "Titan One", cursive;
   background-image: url("assets/bg.jpg");
   height: 100%;
@@ -344,12 +354,10 @@ button {
   }
 }
 
-
 .project {
   width: 100vw;
   height: 100vh;
 }
-
 
 @keyframes pulse {
   0% {
@@ -359,7 +367,7 @@ button {
     transform: scale(1.2);
   }
   100% {
-    transform: scale(0.9);
+    transform: scale(1);
   }
 }
 
@@ -376,7 +384,6 @@ button {
   top: -5px;
   left: -35%;
 }
-
 
 .gif2 {
   position: absolute;

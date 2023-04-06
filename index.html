@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uderz krecika</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="/assets/icon.png">
+    <link rel="icon" href="/assets/icon.png" />
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -17,90 +17,94 @@
     <div class="project">
       <div class="przejscie"></div>
 
-    <div class="start-screen">
-      <h1 id="logo">Uderz krecika</h1>
-      <p class="description">
-        Uderz krecika to gra, w której musisz uderzyć jak najwięcej krecików.
-      </p>
-      <p class="description">
-        Złote kreciki to podwojone punkty. Uderzając w bombę tracisz życie.
-      </p>
-      <img  src="assets/bomba1.webp" id="gif"/>
-      <div class="buttons">
-        <button class="start-button">START</button>
-        <button class="options-button">OPCJE</button>
+      <div class="start-screen">
+        <h1 id="logo">Uderz krecika</h1>
+        <p class="description">
+          Uderz krecika to gra, w której musisz uderzyć jak najwięcej krecików.
+        </p>
+        <p class="description">
+          Złote kreciki to 5 punktów. Przy włączonych życiach, uderzając w bombę
+          tracisz życie.
+        </p>
+        <p class="description">
+          Gdy grasz bez żyć, uderzając w bombę trafisz 5 punktów.
+        </p>
+        <p class="description">Nie uderzając w krecika tracisz punkt.</p>
+        <img src="assets/bomba1.webp" id="gif" />
+        <div class="buttons">
+          <button class="start-button">START</button>
+          <button class="options-button">OPCJE</button>
+        </div>
       </div>
-    </div>
 
-    <div class="options-screen">
-      <div class="brd">
-        <div class="wyborUst">
-          <div class="brd2">
-            <h1>Ustawienia</h1>
-            <div class="btns">
-              <div class="selectOption">
-                <input type="checkbox" id="speed" />
-                <label for="speed">Zwiększająca się szybkość</label>
-              </div>
-              <br />
-              <div class="selectOption">
-                <input type="checkbox" id="golden" />
-                <label for="golden">Zlote Kreciki</label>
-              </div>
-              <br />
-              <div class="selectOption">
-                <input type="checkbox" id="lives" />
-                <label for="lives">Życia</label>
-                <div class="lives-checked">
-                  <div class="ls">
-                    <input type="radio" id="lives-1" name="liv" value="1" />
-                    <label for="lives-1">1</label>
-                  </div>
-                  <br />
-                  <div class="ls">
-                    <input type="radio" id="lives-3" name="liv" value="3" />
-                    <label for="lives-3">3</label>
-                  </div>
-                  <br />
-                  <div class="ls">
-                    <input type="radio" id="lives-5" name="liv" value="5" />
-                    <label for="lives-5">5</label>
+      <div class="options-screen">
+        <div class="brd">
+          <div class="wyborUst">
+            <div class="brd2">
+              <h1>Ustawienia</h1>
+              <div class="btns">
+                <div class="selectOption">
+                  <input type="checkbox" id="speed" />
+                  <label for="speed">Zwiększająca się szybkość</label>
+                </div>
+                <br />
+                <div class="selectOption">
+                  <input type="checkbox" id="golden" />
+                  <label for="golden">Zlote Kreciki</label>
+                </div>
+                <br />
+                <div class="selectOption">
+                  <input type="checkbox" id="lives" />
+                  <label for="lives">Życia</label>
+                  <div class="lives-checked">
+                    <div class="ls">
+                      <input type="radio" id="lives-1" name="liv" value="1" />
+                      <label for="lives-1">1</label>
+                    </div>
+                    <br />
+                    <div class="ls">
+                      <input type="radio" id="lives-3" name="liv" value="3" />
+                      <label for="lives-3">3</label>
+                    </div>
+                    <br />
+                    <div class="ls">
+                      <input type="radio" id="lives-5" name="liv" value="5" />
+                      <label for="lives-5">5</label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <button class="back-button">Powrót</button>
-    </div>
-
-    <div class="result-screen">
-      <h1>KONIEC GRY</h1>
-      <h1>Twój wynik to: <span>0</span></h1>
-      <button class="back-button">Powrót</button>
-    </div>
-
-    <div class="game">
-      <h1 class="score">Punkty: <span>0</span></h1>
-      <h1 class="lives">Życia: <span>1</span></h1>
-      <div class="board" draggable="false">
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
-        <div class="hole"></div>
+        <button class="back-button">Powrót</button>
       </div>
 
-      <button class="back-button">Powrót</button>
-    </div>
+      <div class="result-screen">
+        <h1>KONIEC GRY</h1>
+        <h1>Twój wynik to: <span>0</span></h1>
+        <button class="back-button">Powrót</button>
+      </div>
 
-    <div class="cursor"></div>
-      
+      <div class="game">
+        <h1 class="score">Punkty: <span>0</span></h1>
+        <h1 class="lives">Życia: <span>1</span></h1>
+        <div class="board" draggable="false">
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+        </div>
+
+        <button class="back-button">Powrót</button>
+      </div>
+
+      <div class="cursor"></div>
     </div>
   </body>
 </html>
